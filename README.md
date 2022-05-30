@@ -4,7 +4,7 @@ In this repository is hosted Nuruk, a virtual reality game in **Unity3D** that o
 
 # Infrastructure
 
-![image](https://user-images.githubusercontent.com/44384347/171066870-bd20a7a6-f980-4239-bf94-01cfd445591f.png)
+![image](https://user-images.githubusercontent.com/44384347/171067568-7172db95-b845-4b51-9873-f23d6431f4c1.png)
 
 ## Basic functionalities at the moment are:
 
