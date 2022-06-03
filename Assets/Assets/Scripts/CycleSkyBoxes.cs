@@ -8,6 +8,9 @@ public class CycleSkyBoxes : MonoBehaviour
     public Material[] SkyBoxes;
     WeatherApi api;
     string localtime;
+    string  time;
+    int count = 0, prev, current;
+    public int hour;
 
     void Start()
     {
@@ -19,6 +22,9 @@ public class CycleSkyBoxes : MonoBehaviour
         api.GetWeather().Then((res) => {
            WeatherApi.weatherLocation =  JsonConvert.DeserializeObject<currentWeatherLocation>(res.Text);
            localtime = WeatherApi.weatherLocation.location.localtime.Split(' ')[1];
+            time = localtime.Split(':')[0];
+            hour =  int.Parse(time);
+            prev = hour;
            setSkybox();
         }).Catch(er => {
             Debug.Log(er.Message);
@@ -28,8 +34,6 @@ public class CycleSkyBoxes : MonoBehaviour
         RenderSettings.skybox = sky;
     }
     void  setSkybox() {
-        string time = localtime.Split(':')[0];
-        int hour =  int.Parse(time);
         // de 0 a 3 am 
         if ( hour < 4 ){
             setSky(SkyBoxes[0]);
@@ -78,6 +82,14 @@ public class CycleSkyBoxes : MonoBehaviour
         }else
         {
             setSky(SkyBoxes[4]);
+        }
+    }
+    private void Update() {
+        current = hour;
+        count = 0;
+        if(prev != current && count < 1){
+            setSkybox();
+            count++;
         }
     }
 }
