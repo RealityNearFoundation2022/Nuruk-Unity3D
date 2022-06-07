@@ -46,36 +46,36 @@ public class CycleSkyBoxes : MonoBehaviour
         else if ( hour == 6 || hour == 7){
             setSky(SkyBoxes[2]);
         }
-        // de 8 a 9 am - 4
+        // de 8 a 9 am 
         else if ( hour == 8 || hour == 9){
             setSky(SkyBoxes[3]);
         }
-        // de 10 a 11 am - 5
+        // de 10 a 11 am 
         else if (  hour == 10 || hour == 11){
             setSky(SkyBoxes[4]);
         }
-        // de 12 a 13 pm - 6
+        // de 12 a 13 pm
         else if ( hour == 12 || hour == 13){
             setSky(SkyBoxes[5]);
         }
-        // de 14 a 15 pm - 7
+        // de 14 a 15 pm 
         else if ( hour == 14 || hour == 15){
             setSky(SkyBoxes[6]);
         }
-        // de 16 a 17 pm - 8
+        // de 16 a 17 pm  
         else if (  hour == 16 || hour == 17){
             setSky(SkyBoxes[7]);
         }
-        // de 18  pm - 9
+        // de 18  pm 
         else if (  hour == 18){
             setSky(SkyBoxes[8]);
         }
-        // de 19  pm - 9
+        // de 19  pm 
 
         else if (hour == 19){
             setSky(SkyBoxes[9]);
         }
-        // de 20 a 23 pm - 9
+        // de 20 a 23 pm 
         else if (  hour > 19 && hour < 24){
             setSky(SkyBoxes[10]);
 
