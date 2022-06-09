@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Newtonsoft.Json;
 
@@ -15,9 +16,17 @@ public class CycleSkyBoxes : MonoBehaviour
     void Start()
     {
         api = gameObject.GetComponent<WeatherApi>();
-        Request();
+        StartCoroutine(GetLocalTime());
     }
-
+    
+    IEnumerator GetLocalTime()
+    {
+        while (true)
+        {
+            Request();
+            yield return new WaitForSeconds(3600f);
+        }
+    }
     public void Request(){
         api.GetWeather().Then((res) => {
            WeatherApi.weatherLocation =  JsonConvert.DeserializeObject<currentWeatherLocation>(res.Text);
