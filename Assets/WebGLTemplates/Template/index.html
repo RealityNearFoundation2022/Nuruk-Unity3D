@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/near-api-js@0.41.0/dist/near-api-js.min.js"></script>
+  <script src="Build/{{{ LOADER_FILENAME }}}"></script>
+</head>
+<body>
+   <canvas id="unity-canvas" width={{{ WIDTH }}} height={{{ HEIGHT }}} style="overflow: hidden; width: {{{ WIDTH }}}%; height: {{{ HEIGHT }}}vh; background: {{{ BACKGROUND_FILENAME ? 'url(\'Build/' + BACKGROUND_FILENAME.replace(/'/g, '%27') + '\') center / cover' : BACKGROUND_COLOR }}} "></canvas>
+  
+   <script>
+    // connect to NEAR
+    const near = new nearApi.Near({
+      keyStore: new nearApi.keyStores.BrowserLocalStorageKeyStore(),
+      networkId: 'testnet',
+      nodeUrl: 'https://rpc.testnet.near.org',
+      walletUrl: 'https://wallet.testnet.near.org'
+    });
+    
+    // connect to the NEAR Wallet
+    const wallet = new nearApi.WalletConnection(near, 'Nuruk');
+
+    // connect to a NEAR smart contract
+   //  const contract = new nearApi.Contract(wallet.account(), 'guest-book.testnet', {
+   //    viewMethods: ['getMessages'],
+   //    changeMethods: ['addMessage']
+   //  });
+    // call the getMessages view method
+   //  contract.getMessages()
+   //    .then(messages => {
+   //      const ul = document.getElementById('messages');
+   //      messages.forEach(message => {
+   //        const li = document.createElement('li');
+   //        li.textContent = `${message.sender} - ${message.text}`;
+   //        ul.appendChild(li);
+   //      })
+   //    });
+
+    // Either sign in or call the addMessage change method on button click
+   function LoginNear(params) {
+      wallet.requestSignIn({
+         contractId: 'nuruktestlogin.testnet',
+         methodNames: ['getMessages', 'addMessage']
+      });
+   }
+
+   // Unity Canvas
+   createUnityInstance(document.querySelector("#unity-canvas"), {
+      dataUrl: "Build/{{{ DATA_FILENAME }}}",
+      frameworkUrl: "Build/{{{ FRAMEWORK_FILENAME }}}",
+      codeUrl: "Build/{{{ CODE_FILENAME }}}",
+#if MEMORY_FILENAME
+      memoryUrl: "Build/{{{ MEMORY_FILENAME }}}",
+#endif
+#if SYMBOLS_FILENAME
+      symbolsUrl: "Build/{{{ SYMBOLS_FILENAME }}}",
+#endif
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "{{{ COMPANY_NAME }}}",
+      productName: "{{{ PRODUCT_NAME }}}",
+      productVersion: "{{{ PRODUCT_VERSION }}}",
+      // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+      // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+   });
+    </script>
+</body>
+
+</html>
