@@ -8,4 +8,8 @@ mergeInto(LibraryManager.library, {
     var convertedText = Pointer_stringify(url);
     window.open(convertedText,"_self")
   },
+
+  GetBalance: function(){
+    getBalance();
+  }
 });
