@@ -10,6 +10,19 @@ mergeInto(LibraryManager.library, {
   },
 
   GetBalance: function(){
-    getBalance();
-  }
+    var returnStr = getBalance()
+    var bufferSize = lengthBytesUTF8(returnStr) + 1;
+    var buffer = _malloc(bufferSize);
+    stringToUTF8(returnStr, buffer, bufferSize);
+    return buffer;
+  },
+
+  GetAccounID: function(){
+    var returnStr = AccountId();
+    var bufferSize = lengthBytesUTF8(returnStr) + 1;
+    var buffer = _malloc(bufferSize);
+    stringToUTF8(returnStr, buffer, bufferSize);
+    return buffer;
+  },
+ 
 });
