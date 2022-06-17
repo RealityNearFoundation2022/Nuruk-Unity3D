@@ -11,16 +11,17 @@ public class WalletBalance : MonoBehaviour
     
     [DllImport("__Internal")]
     private static extern string GetAccounID();
-
-    //var staked;
+    string saldo;
     public void Balance()
     {
-      //  staked = GetBalance();
         Debug.Log(GetBalance());
-        Debug.Log("----");
+     //   Debug.Log("----");
         Debug.Log(GetAccounID());
+    }
+    private void Update() {
+      saldo = GetBalance();
         userName.text = GetAccounID();
-        balance.text = GetBalance();
+        balance.text = saldo;
     }
 
 }

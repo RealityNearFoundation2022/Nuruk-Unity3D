@@ -6,23 +6,25 @@ mergeInto(LibraryManager.library, {
 
   OpenURL: function(url) {
     var convertedText = Pointer_stringify(url);
-    window.open(convertedText,"_self")
+    window.open(convertedText,"_self");
   },
 
-  GetBalance: function(){
-    var returnStr = getBalance()
-    var bufferSize = lengthBytesUTF8(returnStr) + 1;
-    var buffer = _malloc(bufferSize);
-    stringToUTF8(returnStr, buffer, bufferSize);
-    return buffer;
+  GetBalance: function (){
+    setTimeout(function () {
+      var returnStr =  getBalance();
+      var bufferSize = lengthBytesUTF8(returnStr) + 1;
+      var buffer = _malloc(bufferSize);
+      stringToUTF8(returnStr, buffer, bufferSize);
+      return buffer;
+    }, 2000);
   },
 
-  GetAccounID: function(){
+  GetAccounID: function (){
     var returnStr = AccountId();
     var bufferSize = lengthBytesUTF8(returnStr) + 1;
     var buffer = _malloc(bufferSize);
     stringToUTF8(returnStr, buffer, bufferSize);
     return buffer;
-  },
- 
+  }
+
 });
