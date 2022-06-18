@@ -27,5 +27,24 @@ Please make sure to update tests as appropriate.
 
 ![image](https://user-images.githubusercontent.com/44384347/171067568-7172db95-b845-4b51-9873-f23d6431f4c1.png)
 
+
+## NEAR Protocol 
+
+NNEAR Protocol is a new smart contract platform that offers scalability and ease of use.
+
+Nuruk connects and interacts with the NEAR blockchain
+that will allow us to make transactions with the wallet
+
+Through sharding, it will linearly scale with the number of validation nodes on the network.
+
+## Quick start
+Check out the following links
+
+Deployed, live documentation: [https://docs.near.org](https://docs.near.org)
+
+Example applications: [https://near.dev](https://docs.near.org)
+
+Community chat: [https://near.chat](https://docs.near.org)
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

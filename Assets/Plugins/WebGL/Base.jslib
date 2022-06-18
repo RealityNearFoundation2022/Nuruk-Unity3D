@@ -19,8 +19,16 @@ mergeInto(LibraryManager.library, {
     }, 2000);
   },
 
-  GetAccounID: function (){
+  GetAccountID: function (){
     var returnStr = AccountId();
+    var bufferSize = lengthBytesUTF8(returnStr) + 1;
+    var buffer = _malloc(bufferSize);
+    stringToUTF8(returnStr, buffer, bufferSize);
+    return buffer;
+  },
+  
+  BalanceWallet: function (){
+    var returnStr = Balance();
     var bufferSize = lengthBytesUTF8(returnStr) + 1;
     var buffer = _malloc(bufferSize);
     stringToUTF8(returnStr, buffer, bufferSize);
