@@ -30,7 +30,7 @@ Please make sure to update tests as appropriate.
 
 ## NEAR Protocol 
 
-NNEAR Protocol is a new smart contract platform that offers scalability and ease of use.
+NEAR Protocol is a new smart contract platform that offers scalability and ease of use.
 
 Nuruk connects and interacts with the NEAR blockchain
 that will allow us to make transactions with the wallet
