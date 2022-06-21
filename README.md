@@ -38,9 +38,9 @@ Check out the following links
 
 Deployed, live documentation: [https://docs.near.org](https://docs.near.org)
 
-Example applications: [https://near.dev](https://docs.near.org)
+Example applications: [https://near.dev](https://near.dev)
 
-Community chat: [https://near.chat](https://docs.near.org)
+Community chat: [https://near.chat](https://near.chat)
 
 ## How to start 
 
