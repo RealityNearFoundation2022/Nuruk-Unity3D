@@ -14,12 +14,10 @@ public class WalletBalance : MonoBehaviour
   [DllImport("__Internal")]
   private static extern string BalanceWallet();
 
-  [DllImport("__Internal")]
-  private static extern void StartFunc();
+ 
   string saldo;
 
   void Start() {
-    StartFunc();
     StartCoroutine(startWallet());
   }
   IEnumerator startWallet(){
