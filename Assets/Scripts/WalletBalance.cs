@@ -28,6 +28,6 @@ public class WalletBalance : MonoBehaviour
   {
     saldo = BalanceWallet();
     userName.text = GetAccountID();
-    balance.text = $"Realities: {saldo}";
+    balance.text = "Realities: " + saldo;
   }
 }
