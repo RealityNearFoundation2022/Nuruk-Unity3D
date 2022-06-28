@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using Proyecto26;
 using RSG;
+
 [System.Serializable]
 public class UserData_login
 {
-    public string email;
+    public string username;
     public string password;
 }
+
 [System.Serializable]
 public class UserData_login_Response
 {
     public string access_token;
     public string token_type;
 }
+
 [System.Serializable]
 public class UserData_AuthRequest
 {
@@ -65,18 +68,28 @@ public class WebNuruk : MonoBehaviour
         };
         return RestClient.Post<UserData_authResponse>(currentRequest);
     }
+
+
     public RSG.IPromise<UserData_login_Response> Login_Post(string email, string password)
     {
-        string jsonString_login;
 
-        data_login.email = email;
+        string jsonString_login;
+        
+      //  RestClient.DefaultRequestHeaders["accept"] = "application/json";
+        RestClient.DefaultRequestHeaders["Content-Type"] = "application/x-www-form-urlencoded";
+
+        data_login.username = email;
         data_login.password = password;
+        WWWForm wWW = new WWWForm();
+        wWW.AddField("username", email);
+        wWW.AddField("password", password);
 
         jsonString_login = JsonUtility.ToJson(data_login);
+     //   Debug.Log(jsonString_login);
         currentRequest = new RequestHelper
         {
             Uri = baseUri + "api/v1/login/access-token",
-            BodyString = jsonString_login,
+            FormData = wWW
         };
         return RestClient.Post<UserData_login_Response>(currentRequest);
     }

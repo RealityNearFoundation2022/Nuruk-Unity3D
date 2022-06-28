@@ -8,16 +8,9 @@ using TMPro;
 [System.Serializable]
 public class DetailLoginError
 {
-    public DataError[] detail;
+    public string detail;
 }
 
-/* [System.Serializable]
-public class DataError
-{
-    public string[] loc;
-    public string msg;
-    public string type;
-} */
 public class LoginNuruk : MonoBehaviour
 {
     [SerializeField] TMP_InputField email;
@@ -36,12 +29,16 @@ public class LoginNuruk : MonoBehaviour
         if((email.text != "") && (password.text != "")) {
             webNuruk.Login_Post(email.text, password.text).Then((res) => {
                 WebNuruk.login_Response = res;
-                Debug.Log(JsonUtility.ToJson(res));
+                Debug.Log(res);
+                Debug.Log("llego");
 
             }).Catch((err) => {
                 var error = err as RequestException;
+                responseErrAuth = JsonUtility.FromJson<DetailLoginError>(error.Response);
+                
+                Debug.Log(responseErrAuth.detail);
 
-                Debug.Log(JsonUtility.ToJson(error.Response));
+                Debug.Log("error");
             });
         }else{
             Debug.Log("campos en blanco");
