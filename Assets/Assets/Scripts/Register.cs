@@ -8,16 +8,9 @@ using TMPro;
 [System.Serializable]
 public class DetailRegisterError
 {
-    public DataError[] detail;
+    public string detail;
 }
 
-[System.Serializable]
-public class DataError
-{
-    public string[] loc;
-    public string msg;
-    public string type;
-}
 public class Register : MonoBehaviour
 {
     [SerializeField] TMP_InputField full_name;
@@ -40,10 +33,7 @@ public class Register : MonoBehaviour
             }).Catch((err) => {
                 var error = err as RequestException;
                 responseErrAuth = JsonUtility.FromJson<DetailRegisterError>(error.Response);
-                Debug.Log(JsonUtility.ToJson(responseErrAuth));
-                /// falta mostrar el error
-                /* Debug.Log(error);
-                Debug.Log(JsonUtility.ToJson(error)); */
+                Debug.Log(responseErrAuth.detail);
             });
         }
     }
