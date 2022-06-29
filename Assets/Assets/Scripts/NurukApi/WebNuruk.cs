@@ -72,7 +72,6 @@ public class WebNuruk : MonoBehaviour
     public static UserData_login_Response login_Response = new UserData_login_Response();
     public static UserData_authResponse User_datos_authRes = new UserData_authResponse();
 
-
 #if UNITY_EDITOR
     private readonly string baseUri = "http://216.128.138.227/";
 #endif
