@@ -5,17 +5,11 @@ using Proyecto26;
 using RSG;
 using TMPro;
 
-[System.Serializable]
-public class DetailLoginError
-{
-    public string detail;
-}
-
 public class LoginNuruk : MonoBehaviour
 {
     [SerializeField] TMP_InputField email;
     [SerializeField] TMP_InputField password;
-    DetailLoginError responseErrAuth = new DetailLoginError();
+    DetailError responseErrAuth = new DetailError();
 
     WebNuruk webNuruk;
 
@@ -29,16 +23,10 @@ public class LoginNuruk : MonoBehaviour
         if((email.text != "") && (password.text != "")) {
             webNuruk.Login_Post(email.text, password.text).Then((res) => {
                 WebNuruk.login_Response = res;
-                Debug.Log(res);
-                Debug.Log("llego");
-
             }).Catch((err) => {
                 var error = err as RequestException;
-                responseErrAuth = JsonUtility.FromJson<DetailLoginError>(error.Response);
-                
+                responseErrAuth = JsonUtility.FromJson<DetailError>(error.Response);
                 Debug.Log(responseErrAuth.detail);
-
-                Debug.Log("error");
             });
         }else{
             Debug.Log("campos en blanco");

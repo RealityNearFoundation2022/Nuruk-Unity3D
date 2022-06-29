@@ -36,10 +36,39 @@ public class UserData_authResponse
     public int id;
 }
 
+[System.Serializable]
+public class DetailError
+{
+    public string detail;
+}
+
+[System.Serializable]
+public class BugReport_Response
+{
+    public string category;
+    public string title;
+    public string description;
+    public int status;
+    public string image;
+    public int id;
+    public int  owner_id;
+}
+
+[System.Serializable]
+public class BugReport_Data
+{
+    public string category;
+    public string title;
+    public string description;
+    public int status;
+    public string image;
+}
+
 public class WebNuruk : MonoBehaviour
 {
     UserData_login data_login = new UserData_login();
     UserData_AuthRequest User_datos = new UserData_AuthRequest();
+    public static BugReport_Response bug_response = new BugReport_Response();
     public static UserData_login_Response login_Response = new UserData_login_Response();
     public static UserData_authResponse User_datos_authRes = new UserData_authResponse();
 
@@ -72,10 +101,6 @@ public class WebNuruk : MonoBehaviour
 
     public RSG.IPromise<UserData_login_Response> Login_Post(string email, string password)
     {
-
-        string jsonString_login;
-        
-      //  RestClient.DefaultRequestHeaders["accept"] = "application/json";
         RestClient.DefaultRequestHeaders["Content-Type"] = "application/x-www-form-urlencoded";
 
         data_login.username = email;
@@ -83,14 +108,25 @@ public class WebNuruk : MonoBehaviour
         WWWForm wWW = new WWWForm();
         wWW.AddField("username", email);
         wWW.AddField("password", password);
-
-        jsonString_login = JsonUtility.ToJson(data_login);
-     //   Debug.Log(jsonString_login);
         currentRequest = new RequestHelper
         {
             Uri = baseUri + "api/v1/login/access-token",
             FormData = wWW
         };
         return RestClient.Post<UserData_login_Response>(currentRequest);
+    }
+
+    public RSG.IPromise<BugReport_Response> BugReport_Post(BugReport_Data bug)
+    {
+        string jsonString;
+        //token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTcyMzM2MzAsInN1YiI6IjkifQ.dJUVscZ0e7vNJHU67UJFFs3EX13W6bSQK0FNPlBuQ6Y"
+        RestClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + login_Response.access_token);
+        jsonString = JsonUtility.ToJson(bug);
+        currentRequest = new RequestHelper
+        {
+            Uri = baseUri + "api/v1/reports",
+            BodyString = jsonString,
+        };
+        return RestClient.Post<BugReport_Response>(currentRequest);
     }
 }
