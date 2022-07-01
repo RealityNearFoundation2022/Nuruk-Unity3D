@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4240740427121043576}
   - component: {fileID: 6219359256843751182}
   - component: {fileID: 1455053835713495580}
+  - component: {fileID: -3226411947285964649}
   m_Layer: 0
   m_Name: home_high.004
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-3226411947285964649
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196861467883727727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1401887646791114474, guid: e55ed12e1a2513a41a321b1cb3267c57, type: 3}

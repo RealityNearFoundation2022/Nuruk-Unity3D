@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3842706334505101308}
   - component: {fileID: 3631198258817179501}
   - component: {fileID: 5914511514057889615}
+  - component: {fileID: 703096747557410735}
   m_Layer: 0
   m_Name: home_bank.007
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &703096747557410735
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7054966907681030871}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -9206726313978132087, guid: 3114b307004c62e459004723f7c4fde5, type: 3}

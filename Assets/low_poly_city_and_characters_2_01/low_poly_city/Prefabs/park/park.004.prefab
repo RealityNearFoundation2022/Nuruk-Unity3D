@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1556217579914161844}
   - component: {fileID: 1901886840951869873}
   - component: {fileID: 7555011436687466525}
+  - component: {fileID: 381769356026822063}
   m_Layer: 0
   m_Name: park.004
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &381769356026822063
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794421330570719299}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6038675373384962655, guid: 9ae1b36c4fa448e4f8818a96f7bab262, type: 3}

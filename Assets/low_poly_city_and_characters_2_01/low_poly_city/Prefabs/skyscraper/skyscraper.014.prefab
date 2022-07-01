@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8984625322161509842}
   - component: {fileID: 8408895496193701883}
   - component: {fileID: 2423446715956582181}
+  - component: {fileID: 1277386370547681192}
   m_Layer: 0
   m_Name: skyscraper.014
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1277386370547681192
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582733047959117290}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7626038196962391209, guid: 5716c2efc2ecd3249a5a6af1ccebe240, type: 3}

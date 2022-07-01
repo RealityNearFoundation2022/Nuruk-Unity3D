@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2881770435420310835}
   - component: {fileID: 7786855583831825591}
   - component: {fileID: 4741511908184252449}
+  - component: {fileID: -7294188006055091700}
   m_Layer: 0
   m_Name: stolb.004
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-7294188006055091700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979135749455127865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.16146857, y: 1.5458552, z: 0.16146858}
+  m_Center: {x: -0.00006593391, y: 0.7345658, z: 0.0003639385}

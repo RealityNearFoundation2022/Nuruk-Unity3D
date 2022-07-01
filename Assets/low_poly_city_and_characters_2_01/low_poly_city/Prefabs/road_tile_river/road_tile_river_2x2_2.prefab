@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4016237061160595362}
   - component: {fileID: 2997734186163054046}
   - component: {fileID: 6991722035095037509}
+  - component: {fileID: 4856470232192556247}
   m_Layer: 0
   m_Name: road_tile_river_2x2_2
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4856470232192556247
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4854968585652920678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 378385003593129555, guid: 27d4488c84a0d6349b98f37bbc6f2ab5, type: 3}

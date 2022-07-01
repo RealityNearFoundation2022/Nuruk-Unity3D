@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6016835192169821922}
   - component: {fileID: 7182332349754302940}
   - component: {fileID: 8202386036023344765}
+  - component: {fileID: 162965172484757152}
   m_Layer: 0
   m_Name: parking_tile_2x2_4
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &162965172484757152
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268983341289881206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 104873333217289643, guid: 384fcda2527bc254da84f849d00af121, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1200114337130019893}
   - component: {fileID: 6828151874406764356}
   - component: {fileID: 4738835978284603094}
+  - component: {fileID: 4361390629247131419}
   m_Layer: 0
   m_Name: home_temple.008
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4361390629247131419
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4423114340230386941}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3518566615542095002, guid: e1f2b8238a7f0954d941fa23c4fcf3dd, type: 3}
