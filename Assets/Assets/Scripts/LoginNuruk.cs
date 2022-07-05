@@ -28,6 +28,7 @@ public class LoginNuruk : MonoBehaviour
         if((email.text != "") && (password.text != "")) {
             webNuruk.Login_Post(email.text, password.text).Then((res) => {
                 WebNuruk.login_Response = res;
+                Debug.Log(JsonUtility.ToJson(res));
             }).Catch((err) => {
                 var error = err as RequestException;
                 responseErrAuth = JsonUtility.FromJson<DetailError>(error.Response);
