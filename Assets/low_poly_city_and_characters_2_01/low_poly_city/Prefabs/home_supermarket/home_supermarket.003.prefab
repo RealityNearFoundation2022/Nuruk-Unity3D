@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3121129916192760798}
   - component: {fileID: 8000749136055464075}
   - component: {fileID: 7760134119197089445}
+  - component: {fileID: -1630583756843237946}
   m_Layer: 0
   m_Name: home_supermarket.003
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-1630583756843237946
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265529028458232713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.9808807, y: 1.9632045, z: 3.4109704}
+  m_Center: {x: -0.06291503, y: 0.97582537, z: 0.009401083}

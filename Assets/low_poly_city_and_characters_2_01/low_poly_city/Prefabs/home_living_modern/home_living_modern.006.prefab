@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3138054968164411558}
   - component: {fileID: 855419408531169807}
   - component: {fileID: 7372177393157109856}
+  - component: {fileID: -5332235864125428488}
   m_Layer: 0
   m_Name: home_living_modern.006
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-5332235864125428488
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598202126511976333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8734295022036902767, guid: 53c8619db7a5fcf4c86bc6f6b4dad2ff, type: 3}

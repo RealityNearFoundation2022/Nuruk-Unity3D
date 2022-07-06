@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7152750310223048776}
   - component: {fileID: 2407033717866112435}
   - component: {fileID: 3543828582112271902}
+  - component: {fileID: -8600916299402340957}
   m_Layer: 0
   m_Name: tile_for_home_1x1.010
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-8600916299402340957
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8540717177366645256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2268862873011097242, guid: 530ec5770b2fa4c4eb5bd73894217a18, type: 3}

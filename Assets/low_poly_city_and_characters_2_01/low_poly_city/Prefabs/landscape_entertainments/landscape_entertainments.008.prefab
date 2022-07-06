@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2508683773784402214}
   - component: {fileID: 909936142226501998}
   - component: {fileID: 328724902111392978}
+  - component: {fileID: 8317271545316830376}
   m_Layer: 0
   m_Name: landscape_entertainments.008
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8317271545316830376
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6297112993449998541}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2373264506633026095, guid: 68c71682401e4ec449de76e02f7dbefc, type: 3}
