@@ -47,11 +47,6 @@ public class CycleSkyBoxes : MonoBehaviour
         if ( hour < 4 ){
             setSky(SkyBoxes[0]);
         }
-      
-       /*  //  4 am
-        else if (  ){
-            setSky(SkyBoxes[9]);
-        } */
         // 4 am a 5 am 
         else if (hour == 4  || hour == 5){
             setSky(SkyBoxes[1]);
