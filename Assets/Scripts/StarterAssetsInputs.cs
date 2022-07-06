@@ -2,8 +2,9 @@ using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
+using Mirror;
 
-public class StarterAssetsInputs : MonoBehaviour
+public class StarterAssetsInputs : NetworkBehaviour
 {
    [Header("Character Input Values")]
    public Vector2 move;
@@ -18,12 +19,14 @@ public class StarterAssetsInputs : MonoBehaviour
    public bool cursorLocked = true;
    public bool cursorInputForLook = true;
 
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
+#if ENABLE_INPUT_SYSTEM
+   [Client]
    public void OnMove(InputValue value)
    {
       MoveInput(value.Get<Vector2>());
    }
 
+   [Client]
    public void OnLook(InputValue value)
    {
       if (cursorInputForLook)
@@ -32,43 +35,50 @@ public class StarterAssetsInputs : MonoBehaviour
       }
    }
 
+   [Client]
    public void OnJump(InputValue value)
    {
       JumpInput(value.isPressed);
    }
 
+   [Client]
    public void OnSprint(InputValue value)
    {
       SprintInput(value.isPressed);
    }
 #endif
 
-
+   [Client]
    public void MoveInput(Vector2 newMoveDirection)
    {
       move = newMoveDirection;
    }
 
+   [Client]
    public void LookInput(Vector2 newLookDirection)
    {
       look = newLookDirection;
    }
 
+   [Client]
    public void JumpInput(bool newJumpState)
    {
       jump = newJumpState;
    }
 
+   [Client]
    public void SprintInput(bool newSprintState)
    {
       sprint = newSprintState;
    }
 
+   [Client]
    private void OnApplicationFocus(bool hasFocus)
    {
       SetCursorState(cursorLocked);
    }
 
+   [Client]
    private void SetCursorState(bool newState)
    {
       Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
