@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4558053661874066388}
   - component: {fileID: 6887210007083209926}
   - component: {fileID: 2440500843440795591}
+  - component: {fileID: -1026095030176482666}
   m_Layer: 0
   m_Name: beach_tile_1x1_3
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-1026095030176482666
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800226646414719358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4242312566172613704, guid: 27d4488c84a0d6349b98f37bbc6f2ab5, type: 3}

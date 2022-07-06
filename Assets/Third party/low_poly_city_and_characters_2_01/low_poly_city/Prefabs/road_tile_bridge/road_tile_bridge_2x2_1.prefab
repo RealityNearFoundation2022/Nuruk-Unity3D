@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2606629022383364961}
   - component: {fileID: 1703233802623199253}
   - component: {fileID: 8654714486577060640}
+  - component: {fileID: 4464528259772956859}
   m_Layer: 0
   m_Name: road_tile_bridge_2x2_1
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4464528259772956859
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158274670958049875}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2978974998796644006, guid: ad28ce7c7c330e140b6469d1071c411d, type: 3}

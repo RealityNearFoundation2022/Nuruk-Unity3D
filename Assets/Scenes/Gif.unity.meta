@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Gif.unity.meta
 guid: 1f9aceb3b813d1d40a6c3594c035f9e8
+========
+guid: cd49d57c8c21e9d4380637ca0516067b
+>>>>>>>> f7cb3514c8b84ee1365349608a3fb7d4014cdcc1:Assets/Scenes/Register.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

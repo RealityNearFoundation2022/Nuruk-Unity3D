@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 69582508595532884}
   - component: {fileID: 3123145396623453098}
   - component: {fileID: 8803884968871401976}
+  - component: {fileID: -6798167365862538680}
   m_Layer: 0
   m_Name: home_snack.005
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &-6798167365862538680
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8548326919904818093}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1198603346923508621, guid: 5edcbc45e7681194eb65c4ed229d33ad, type: 3}

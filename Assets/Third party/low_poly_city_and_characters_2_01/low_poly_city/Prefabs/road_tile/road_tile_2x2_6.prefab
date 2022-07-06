@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 521714191886455703}
   - component: {fileID: 7548028581015768280}
   - component: {fileID: 3081328845754200168}
-  - component: {fileID: 3710597267744512232}
+  - component: {fileID: 5561544054479813844}
   m_Layer: 0
   m_Name: road_tile_2x2_6
   m_TagString: Untagged
@@ -82,7 +82,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3710597267744512232
+--- !u!64 &5561544054479813844
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -6,12 +6,13 @@ public class LoginNear : MonoBehaviour
 
     [DllImport("__Internal")]
     public static extern void Login();
+   
 
     public void InitLogin()
     {
         Login();
     }
-
+    
 
     public void Register()
     {

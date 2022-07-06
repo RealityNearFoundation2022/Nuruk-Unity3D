@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Mirror/Examples/Pong/Scripts/Ball.cs.meta
 guid: 38b5c2f743cd8034a8beeebf277c92c1
 timeCreated: 1426602353
+========
+guid: ec72980442fddac4d86e75ab24b4d027
+timeCreated: 1513577414
+>>>>>>>> f7cb3514c8b84ee1365349608a3fb7d4014cdcc1:Assets/Assets_comprados/Mini First Person Controller/Scripts/FirstPersonLook.cs.meta
 licenseType: Store
 MonoImporter:
   serializedVersion: 2

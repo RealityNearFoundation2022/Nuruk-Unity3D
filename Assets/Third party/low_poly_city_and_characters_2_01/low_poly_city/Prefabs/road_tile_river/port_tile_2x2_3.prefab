@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4574106666329886934}
   - component: {fileID: 4936404248160114421}
   - component: {fileID: 1098870125833895501}
+  - component: {fileID: 6614900191872549958}
   m_Layer: 0
   m_Name: port_tile_2x2_3
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6614900191872549958
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8443521606466840816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5161041665392664033, guid: 27d4488c84a0d6349b98f37bbc6f2ab5, type: 3}

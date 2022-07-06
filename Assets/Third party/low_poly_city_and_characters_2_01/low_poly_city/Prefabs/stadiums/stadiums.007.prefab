@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2623960225697132904}
   - component: {fileID: 7792137630262482138}
   - component: {fileID: 7252793563943727122}
+  - component: {fileID: 2603883690951353232}
   m_Layer: 0
   m_Name: stadiums.007
   m_TagString: Untagged
@@ -81,3 +82,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2603883690951353232
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058913850777252977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5018508881516894997, guid: 8d95b203c6fcb4045b310c5500eb958f, type: 3}

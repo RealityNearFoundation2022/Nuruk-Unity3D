@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7903530135445058356}
   - component: {fileID: 6307892039309434951}
   - component: {fileID: 767734699114041158}
+  - component: {fileID: -2714085494958878114}
   m_Layer: 0
   m_Name: fire_hydrant
   m_TagString: Untagged
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &-2714085494958878114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7434852661184806276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.29196733, y: 0.40388715, z: 0.29196736}
+  m_Center: {x: -0.00030825287, y: 0.20008934, z: -0.0021263957}
