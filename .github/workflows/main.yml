@@ -12,6 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          lfs: true
+         # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
@@ -22,13 +32,22 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Build-WebGL
-          path: ${{ github.workspace }}/build/WebGL/**/*
+          path: build
   
   server_job:
     name: compile server unix
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
+         # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
