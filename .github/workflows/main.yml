@@ -32,7 +32,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Build-WebGL
-          path: build
+          path: ${{ github.workspace }}/build/WebGL/**/*
   
   server_job:
     name: compile server unix
