@@ -19,6 +19,10 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           targetPlatform: WebGL
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build-WebGL
+          path: ${{ github.workspace }}/build/WebGL/**/*
   
   server_job:
     name: compile server unix
@@ -33,4 +37,7 @@ jobs:
         with:
           targetPlatform: StandaloneLinux64
           customParameters: -EnableHeadlessMode
-
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build-Linux-Server
+          path: ${{ github.workspace }}/build/StandaloneLinux64/**/*
