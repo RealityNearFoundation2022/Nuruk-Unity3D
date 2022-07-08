@@ -5,16 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class WorkFlow : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
 
-    void Gologin()
+    public void GoTologin()
     {
         SceneManager.LoadScene("LoginNuruk");
     }
-     void GoRegister()
+    public void GoToRegister()
     {
         SceneManager.LoadScene("Register");
     }
