@@ -139,7 +139,8 @@ namespace StarterAssets
       {
          FindObjectOfType<CinemachineFreeLook>().Follow = transform;
          FindObjectOfType<CinemachineFreeLook>().LookAt = CinemachineCameraTarget.transform;
-
+         Cursor.lockState = CursorLockMode.Locked;
+         Cursor.visible = false;
       }
 
       private void Start()

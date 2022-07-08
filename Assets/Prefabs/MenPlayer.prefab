@@ -2829,8 +2829,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  MoveSpeed: 2
-  SprintSpeed: 5.335
+  MoveSpeed: 16
+  SprintSpeed: 25
   RotationSmoothTime: 0.12
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
@@ -2856,7 +2856,7 @@ MonoBehaviour:
   GroundLayers:
     serializedVersion: 2
     m_Bits: 1
-  CinemachineCameraTarget: {fileID: 0}
+  CinemachineCameraTarget: {fileID: 3893546568993961271}
   TopClamp: 70
   BottomClamp: -30
   CameraAngleOverride: 0
