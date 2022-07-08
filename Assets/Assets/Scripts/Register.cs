@@ -52,7 +52,7 @@ public class Register : MonoBehaviour
             webNuruk.Login_Post(email.text, password.text).Then((res) => {
                 WebNuruk.login_Response = res;
                 Debug.Log(JsonUtility.ToJson(res));
-                SceneManager.LoadScene("City");
+                SceneManager.LoadScene("CharacterSelect");
             }).Catch((err) => {
                 var error = err as RequestException;
                 responseErrAuth = JsonUtility.FromJson<DetailError>(error.Response);
