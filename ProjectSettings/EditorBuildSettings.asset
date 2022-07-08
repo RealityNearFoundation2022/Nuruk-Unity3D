@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/LoginNuruk.unity
     guid: f2ff7f2435201c64ea4d3e5c37c5e67e
   - enabled: 0
     path: Assets/Scenes/City.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/LoginNear.unity
+    guid: 1655aaf8dab1a9945abe56fb2394262e
   m_configObjects: {}
