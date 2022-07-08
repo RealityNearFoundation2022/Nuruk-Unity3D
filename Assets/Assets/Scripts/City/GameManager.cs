@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject popUpIniciarSesionWallet;
+   // [SerializeField] GameObject popUpIniciarSesionWallet;
     public void GoToLoginNear()
     {
+        Debug.Log("click");
         SceneManager.LoadScene("LoginNear");
     }
   /*   public void ClosePopUp()
