@@ -14,20 +14,29 @@ public class WalletBalance : MonoBehaviour
   [DllImport("__Internal")]
   private static extern string BalanceWallet();
 
- 
+  GameObject banner;
   string saldo;
 
   void Start() {
     StartCoroutine(startWallet());
+    banner = gameObject.transform.GetChild(0).gameObject;
+    banner.SetActive(false);
   }
+
   IEnumerator startWallet(){
-    yield return new WaitForSeconds(2f);
+    yield return new WaitForSeconds(3f);
     Balance();
   }
+
   public void Balance()
   {
     saldo = BalanceWallet();
-    userName.text = GetAccountID();
-    balance.text = "Realities: " + saldo;
+    if (saldo != ""){
+      banner.SetActive(true);
+      userName.text = GetAccountID();
+      balance.text = /* "Realities: " +  */saldo;
+    }else{
+      banner.SetActive(false);
+    }
   }
 }
