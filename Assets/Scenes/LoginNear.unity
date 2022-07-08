@@ -536,7 +536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114941648794982116, guid: 8ba55e993cc65394ca6b37b09d6e28ff, type: 3}
       propertyPath: buttonText
-      value: LOGIN
+      value: REGISTER
       objectReference: {fileID: 0}
     - target: {fileID: 114941648794982116, guid: 8ba55e993cc65394ca6b37b09d6e28ff, type: 3}
       propertyPath: clickEvent.m_PersistentCalls.m_Calls.Array.size
