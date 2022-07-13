@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - feature/guxal/workflows
 
 jobs:
   webgl_job:
@@ -56,6 +55,8 @@ jobs:
         with:
           targetPlatform: StandaloneLinux64
           customParameters: -EnableHeadlessMode
+          customImage: 'unityci/editor:2020.1.14f1-base-0'
+          versioning: Semantic
       - uses: actions/upload-artifact@v2
         with:
           name: Build-Linux-Server
