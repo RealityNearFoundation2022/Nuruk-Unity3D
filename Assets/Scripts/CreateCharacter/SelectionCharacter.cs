@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using CustomEvents;
 
@@ -292,5 +293,9 @@ public class SelectionCharacter : MonoBehaviour
       ColorUtility.TryParseHtmlString(hexColor, out color);
       materialSkin.color = color;
       colorSelect = hexColor;
+   }
+
+   public void GoToCity(){
+      SceneManager.LoadScene("City");
    }
 }

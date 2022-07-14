@@ -5,6 +5,8 @@ using Proyecto26;
 using RSG;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class LoginNuruk : MonoBehaviour
 {
@@ -29,6 +31,7 @@ public class LoginNuruk : MonoBehaviour
             webNuruk.Login_Post(email.text, password.text).Then((res) => {
                 WebNuruk.login_Response = res;
                 Debug.Log(JsonUtility.ToJson(res));
+                SceneManager.LoadScene("City");
             }).Catch((err) => {
                 var error = err as RequestException;
                 responseErrAuth = JsonUtility.FromJson<DetailError>(error.Response);
