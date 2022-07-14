@@ -78,7 +78,7 @@ public class WebNuruk : MonoBehaviour
 #if UNITY_WEBGL && !UNITY_EDITOR
     private readonly string baseUri = "http://216.128.138.227/";
 #endif
-#if UNITY_STANDALONE_LINUX && !UNITY_EDITOR
+#if UNITY_STANDALONE && !UNITY_EDITOR
     private readonly string baseUri = "http://216.128.138.227/";
 #endif
 
