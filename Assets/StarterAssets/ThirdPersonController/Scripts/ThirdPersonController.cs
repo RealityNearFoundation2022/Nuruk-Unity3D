@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.InputSystem;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
-using Mirror;
-using Cinemachine;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
@@ -12,9 +11,9 @@ namespace StarterAssets
 {
    [RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-   [RequireComponent(typeof(PlayerInput))]
+    [RequireComponent(typeof(PlayerInput))]
 #endif
-   public class ThirdPersonController : NetworkBehaviour
+   public class ThirdPersonController : MonoBehaviour
    {
       [Header("Player")]
       [Tooltip("Move speed of the character in m/s")]
@@ -100,9 +99,9 @@ namespace StarterAssets
       private int _animIDFreeFall;
       private int _animIDMotionSpeed;
 
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-      private PlayerInput _playerInput;
-#endif
+
+      public PlayerInput _playerInput;
+
       private Animator _animator;
       private CharacterController _controller;
       private StarterAssetsInputs _input;
@@ -117,9 +116,9 @@ namespace StarterAssets
          get
          {
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-            return _playerInput.currentControlScheme == "KeyboardMouse";
+                return _playerInput.currentControlScheme == "KeyboardMouse";
 #else
-				return false;
+            return false;
 #endif
          }
       }
@@ -134,15 +133,6 @@ namespace StarterAssets
          }
       }
 
-
-      public override void OnStartAuthority()
-      {
-         FindObjectOfType<CinemachineFreeLook>().Follow = transform;
-         FindObjectOfType<CinemachineFreeLook>().LookAt = CinemachineCameraTarget.transform;
-         Cursor.lockState = CursorLockMode.Locked;
-         Cursor.visible = false;
-      }
-
       private void Start()
       {
          _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
@@ -150,11 +140,9 @@ namespace StarterAssets
          _hasAnimator = TryGetComponent(out _animator);
          _controller = GetComponent<CharacterController>();
          _input = GetComponent<StarterAssetsInputs>();
-#if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
+
          _playerInput = GetComponent<PlayerInput>();
-#else
-			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
-#endif
+
 
          AssignAnimationIDs();
 
