@@ -35,7 +35,7 @@ jobs:
   
   server_job:
     name: compile server unix
-    runs-on: windows
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
 
