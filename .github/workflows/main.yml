@@ -31,11 +31,11 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Build-WebGL
-          path: ${{ github.workspace }}/build/WebGL/**/*
+          path: build/WebGL
   
   server_job:
     name: compile server unix
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
@@ -55,8 +55,8 @@ jobs:
         with:
           targetPlatform: StandaloneLinux64
           customParameters: -EnableHeadlessMode
-          customImage: 'unityci/editor:windows-2020.3.31f1-base-0.17.2'
+          customImage: 'unityci/editor:2020.3.31f1-base-0'
       - uses: actions/upload-artifact@v2
         with:
           name: Build-Linux-Server
-          path: ${{ github.workspace }}/build/StandaloneLinux64/**/*
+          path: build/StandaloneLinux64
