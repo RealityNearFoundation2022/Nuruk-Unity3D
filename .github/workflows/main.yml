@@ -55,7 +55,7 @@ jobs:
         with:
           targetPlatform: StandaloneLinux64
           customParameters: -EnableHeadlessMode
-          customImage: 'unityci/editor:2020.1.14f1-base-0'
+          customImage: 'unityci/editor:2020.3.1f1-base-0'
           versioning: Semantic
       - uses: actions/upload-artifact@v2
         with:
