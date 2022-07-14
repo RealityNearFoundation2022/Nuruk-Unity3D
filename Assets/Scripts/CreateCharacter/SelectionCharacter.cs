@@ -1,203 +1,301 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using CustomEvents;
 
 public class SelectionCharacter : MonoBehaviour
 {
 
-
    [Header("Men")]
-   #region Head
-   public SkinnedMeshRenderer head;
-   public Mesh[] headMeshes;
-
-   int currentHead = 0;
+   #region Extra control Men
+   public GameObject[] extrasObjectsMen;
+   public string currentExtraMen;
+   int indexCurrentExtraMen = 0;
    #endregion
 
-   #region Shirt
-   public SkinnedMeshRenderer shirt;
-   public Mesh[] shirtMeshes;
+   #region Head control Men
+   public GameObject[] headObjectsMen;
+   public string currentHeadMen;
+   int indexCurrentHeadMen = 0;
+   #endregion
 
-   int currentShirt = 0;
+   #region Shirt control Men
+   public GameObject[] shirtObjectsMen;
+   public string currentShirtMen;
+   int indexCurrentShirtMen = 0;
+   #endregion
+
+   #region Pants control Men
+
+   public GameObject[] pantsObjectsMen;
+   public string currentPantsMen;
+   int indexCurrentPantsMen = 0;
 
    #endregion
 
-   #region Shoes
-   public SkinnedMeshRenderer shoe;
-   public Mesh[] shoeMeshes;
-
-   int currentShoe = 0;
-
+   #region Shoes control
+   public GameObject[] shoesObjectsMen;
+   public string currentShoesMen;
+   int indexCurrentShoesMen = 0;
    #endregion
-
-   #region Eyes
-   public SkinnedMeshRenderer eye;
-   public Mesh[] eyeMeshes;
-
-   int currentEye = 0;
-   #endregion
-
-   #region Pants
-   public SkinnedMeshRenderer pants;
-   public Mesh[] pantsMeshes;
-
-   int currentPants = 0;
-   #endregion
-
-
 
    [Header("Women")]
-   #region HeadWomen
-   public SkinnedMeshRenderer headWomen;
-   public Mesh[] headWomenMeshes;
-
-   int currentHeadWomen = 0;
+   #region Extra control Women
+   public GameObject[] extrasObjectsWomen;
+   public string currentExtraWomen;
+   int indexCurrentExtraWomen = 0;
    #endregion
 
-   #region ShirtWomen
-   public SkinnedMeshRenderer shirtWomen;
-   public Mesh[] shirtWomenMeshes;
+   #region Head control Women
+   public GameObject[] headObjectsWomen;
+   public string currentHeadWomen;
+   int indexCurrentHeadWomen = 0;
+   #endregion
 
-   int currentShirtWomen = 0;
+   #region Shirt control Men
+   public GameObject[] shirtObjectsWomen;
+   public string currentShirtWomen;
+   int indexCurrentShirtWomen = 0;
+   #endregion
+
+   #region Pants control Men
+
+   public GameObject[] pantsObjectsWomen;
+   public string currentPantsWomen;
+   int indexCurrentPantsWomen = 0;
 
    #endregion
 
-   #region ShoesWomen
-   public SkinnedMeshRenderer shoeWomen;
-   public Mesh[] shoeWomenMeshes;
+   #region Shoes control
+   public GameObject[] shoesObjectsWomen;
+   public string currentShoesWomen;
+   int indexCurrentShoesWomen = 0;
+   #endregion
 
-   int currentShoeWomen = 0;
+   [Header("Monster")]
+   #region Extra control Monster
+   public GameObject[] extrasObjectsMonster;
+   public string currentExtraMonster;
+   int indexCurrentExtraMonster = 0;
+   #endregion
+
+   #region Head control Monster
+   public GameObject[] headObjectsMonster;
+   public string currentHeadMonster;
+   int indexCurrentHeadMonster = 0;
+   #endregion
+
+   #region Shirt control Monster
+   public GameObject[] shirtObjectsMonster;
+   public string currentShirtMonster;
+   int indexCurrentShirtMonster = 0;
+   #endregion
+
+   #region Pants control Monster
+   public GameObject[] pantsObjectsMonster;
+   public string currentPantsMonster;
+   int indexCurrentPantsMonster = 0;
 
    #endregion
 
-   #region EyesWomen
-   public SkinnedMeshRenderer eyeWomen;
-   public Mesh[] eyeWomenMeshes;
-
-   int currentEyeWomen = 0;
+   #region Shoes control
+   public GameObject[] shoesObjectsMonster;
+   public string currentShoesMonster;
+   int indexCurrentShoesMonster = 0;
    #endregion
 
-   #region PantsWomen
-   public SkinnedMeshRenderer pantsWomen;
-   public Mesh[] pantsWomenMeshes;
 
-   int currentPantsWomen = 0;
+   #region Gender
+
+   public string currentGender = "Male";
    #endregion
 
-   #region ChangeGender
-   public bool flagChange = false;
-   #endregion
-
-   [Header("General")]
-   #region General
-   public GameObject male;
-   public GameObject female;
-
+   #region Panels
    public GameObject panelMen;
    public GameObject panelWomen;
+   public GameObject panelMonster;
+
    #endregion
 
-   public ControlManagerCharacter controlManagerCharacter;
+   #region Characters
+   public GameObject Women;
+   public GameObject Men;
+   public GameObject Monster;
 
    public Material materialSkin;
-   public int currentCharacter = 1;
 
-   public void ChangeGender()
+
+   private string colorSelect;
+   #endregion
+
+   public void ChangeExtra(int positionExtra)
    {
+      extrasObjectsMen[indexCurrentExtraMen].SetActive(false);
+      extrasObjectsMen[positionExtra].SetActive(true);
+      indexCurrentExtraMen = positionExtra;
+      currentExtraMen = extrasObjectsMen[indexCurrentExtraMen].name;
+   }
 
-      if (!flagChange)
-      {
-         flagChange = true;
-         male.SetActive(false);
-         female.SetActive(true);
-         panelWomen.SetActive(true);
-         panelMen.SetActive(false);
-         controlManagerCharacter.DisableMen();
-         controlManagerCharacter.InitWomen();
-      }
-      else
-      {
-         flagChange = false;
-         male.SetActive(true);
-         female.SetActive(false);
-         panelWomen.SetActive(false);
-         panelMen.SetActive(true);
-         controlManagerCharacter.DisableWomen();
-         controlManagerCharacter.InitMen();
-      }
+   public void ChangeHead(int positionHead)
+   {
+      headObjectsMen[indexCurrentHeadMen].SetActive(false);
+      headObjectsMen[positionHead].SetActive(true);
+      indexCurrentHeadMen = positionHead;
+      currentHeadMen = headObjectsMen[indexCurrentHeadMen].name;
+   }
+
+   public void ChangeShirt(int positionShirt)
+   {
+      shirtObjectsMen[indexCurrentShirtMen].SetActive(false);
+      shirtObjectsMen[positionShirt].SetActive(true);
+      indexCurrentShirtMen = positionShirt;
+      currentShirtMen = shirtObjectsMen[indexCurrentShirtMen].name;
+   }
+
+   public void ChangePants(int positionPants)
+   {
+      pantsObjectsMen[indexCurrentPantsMen].SetActive(false);
+      pantsObjectsMen[positionPants].SetActive(true);
+      indexCurrentPantsMen = positionPants;
+      currentPantsMen = pantsObjectsMen[indexCurrentPantsMen].name;
+   }
+
+   public void ChangeShoes(int positionShoes)
+   {
+      shoesObjectsMen[indexCurrentShoesMen].SetActive(false);
+      shoesObjectsMen[positionShoes].SetActive(true);
+      indexCurrentShoesMen = positionShoes;
+      currentShoesMen = shoesObjectsMen[indexCurrentShoesMen].name;
    }
 
 
-   public void ChangeHead(int index)
+   public void ChangeExtraWomen(int positionExtra)
    {
-      if (!flagChange)
-      {
-         head.sharedMesh = headMeshes[index];
-         currentHead = index;
-      }
-      else
-      {
-         headWomen.sharedMesh = headWomenMeshes[index];
-         currentHeadWomen = index;
-      }
-
+      extrasObjectsWomen[indexCurrentExtraWomen].SetActive(false);
+      extrasObjectsWomen[positionExtra].SetActive(true);
+      indexCurrentExtraWomen = positionExtra;
+      currentExtraWomen = extrasObjectsWomen[indexCurrentExtraWomen].name;
    }
 
-   public void ChangeShirt(int index)
+   public void ChangeHeadWomen(int positionHead)
    {
-      if (!flagChange)
-      {
-         shirt.sharedMesh = shirtMeshes[index];
-         currentShirt = index;
-      }
-      else
-      {
-         shirtWomen.sharedMesh = shirtWomenMeshes[index];
-         currentShirtWomen = index;
-      }
-
-
+      headObjectsWomen[indexCurrentHeadWomen].SetActive(false);
+      headObjectsWomen[positionHead].SetActive(true);
+      indexCurrentHeadWomen = positionHead;
+      currentHeadWomen = headObjectsWomen[indexCurrentHeadWomen].name;
    }
 
-   public void ChangeShoe(int index)
+   public void ChangeShirtWomen(int positionShirt)
    {
-      if (!flagChange)
-      {
-         shoe.sharedMesh = shoeMeshes[index];
-         currentShoe = index;
-      }
-      else
-      {
-         shoeWomen.sharedMesh = shoeWomenMeshes[index];
-         currentShoeWomen = index;
-      }
-
+      shirtObjectsWomen[indexCurrentShirtWomen].SetActive(false);
+      shirtObjectsWomen[positionShirt].SetActive(true);
+      indexCurrentShirtWomen = positionShirt;
+      currentShirtWomen = shirtObjectsWomen[indexCurrentShirtWomen].name;
    }
 
-   public void ChangePant(int index)
+   public void ChangePantsWomen(int positionPants)
    {
-      if (!flagChange)
-      {
-         pants.sharedMesh = pantsMeshes[index];
-         currentPants = index;
-      }
-      else
-      {
-         pantsWomen.sharedMesh = pantsWomenMeshes[index];
-         currentPantsWomen = index;
-      }
-
+      pantsObjectsWomen[indexCurrentPantsWomen].SetActive(false);
+      pantsObjectsWomen[positionPants].SetActive(true);
+      indexCurrentPantsWomen = positionPants;
+      currentPantsWomen = pantsObjectsWomen[indexCurrentPantsWomen].name;
    }
 
-   public void ChangeColor(string colorHex)
+   public void ChangeShoesWomen(int positionShoes)
+   {
+      shoesObjectsWomen[indexCurrentShoesWomen].SetActive(false);
+      shoesObjectsWomen[positionShoes].SetActive(true);
+      indexCurrentShoesWomen = positionShoes;
+      currentShoesWomen = shoesObjectsWomen[indexCurrentShoesWomen].name;
+   }
+
+   public void ChangeExtraMonster(int positionExtra)
+   {
+      extrasObjectsMonster[indexCurrentExtraMonster].SetActive(false);
+      extrasObjectsMonster[positionExtra].SetActive(true);
+      indexCurrentExtraMonster = positionExtra;
+      currentExtraMonster = extrasObjectsMonster[indexCurrentExtraMonster].name;
+   }
+
+   public void ChangeHeadMonster(int positionHead)
+   {
+      headObjectsMonster[indexCurrentHeadMonster].SetActive(false);
+      headObjectsMonster[positionHead].SetActive(true);
+      indexCurrentHeadMonster = positionHead;
+      currentHeadMonster = headObjectsMonster[indexCurrentHeadMonster].name;
+   }
+
+   public void ChangeShirtMonster(int positionShirt)
+   {
+      shirtObjectsMonster[indexCurrentShirtMonster].SetActive(false);
+      shirtObjectsMonster[positionShirt].SetActive(true);
+      indexCurrentShirtMonster = positionShirt;
+      currentShirtMonster = shirtObjectsMonster[indexCurrentShirtMonster].name;
+   }
+
+   public void ChangePantsMonster(int positionPants)
+   {
+      pantsObjectsMonster[indexCurrentPantsMonster].SetActive(false);
+      pantsObjectsMonster[positionPants].SetActive(true);
+      indexCurrentPantsMonster = positionPants;
+      currentPantsMonster = pantsObjectsMonster[indexCurrentPantsMonster].name;
+   }
+
+   public void ChangeShoesMonster(int positionShoes)
+   {
+      shoesObjectsMonster[indexCurrentShoesMonster].SetActive(false);
+      shoesObjectsMonster[positionShoes].SetActive(true);
+      indexCurrentShoesMonster = positionShoes;
+      currentShoesMonster = shoesObjectsMonster[indexCurrentShoesMonster].name;
+   }
+
+
+   public void ChangeGender(string gender)
+   {
+      switch (gender)
+      {
+         case "Male":
+            panelMen.SetActive(true);
+            panelWomen.SetActive(false);
+            panelMonster.SetActive(false);
+            Men.SetActive(true);
+            Women.SetActive(false);
+            Monster.SetActive(false);
+            break;
+
+         case "Female":
+            panelMen.SetActive(false);
+            panelWomen.SetActive(true);
+            panelMonster.SetActive(false);
+            Men.SetActive(false);
+            Women.SetActive(true);
+            Monster.SetActive(false);
+            break;
+
+         case "Monster":
+            panelMen.SetActive(false);
+            panelWomen.SetActive(false);
+            panelMonster.SetActive(true);
+            Men.SetActive(false);
+            Women.SetActive(false);
+            Monster.SetActive(true);
+            break;
+
+
+      }
+   }
+
+   public void ChangeColor(string hexColor)
    {
       Color color;
-      if (ColorUtility.TryParseHtmlString(colorHex, out color))
-      {
-         materialSkin.color = color;
-      }
+      ColorUtility.TryParseHtmlString(hexColor, out color);
+      materialSkin.color = color;
+      colorSelect = hexColor;
+   }
 
+   public void GoToCity(){
+      SceneManager.LoadScene("City");
    }
 }
