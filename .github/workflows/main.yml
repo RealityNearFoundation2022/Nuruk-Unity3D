@@ -12,12 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
          # Cache
-      - uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: Library
+      #     key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+      #     restore-keys: |
+      #       Library-
 
       - uses: game-ci/unity-builder@v2
         env:
@@ -38,12 +38,12 @@ jobs:
       - uses: actions/checkout@v2
 
          # Cache
-      - uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: Library
+      #     key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+      #     restore-keys: |
+      #       Library-
 
       - uses: game-ci/unity-builder@v2
         env:
@@ -52,7 +52,7 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           targetPlatform: StandaloneLinux64
-          customParameters: " -batchmode -nographics -standaloneBuildSubtarget Server" 
+          customParameters: -batchmode -nographics -standaloneBuildSubtarget Server
           unityVersion: 2021.3.3f1
 
 
