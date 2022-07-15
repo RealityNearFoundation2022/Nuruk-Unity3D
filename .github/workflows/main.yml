@@ -53,7 +53,7 @@ jobs:
         with:
           targetPlatform: StandaloneLinux64
           customParameters: -standaloneBuildSubtarget Server
-          unityVersion: 2021.3.3f1 
+          unityVersion: 2021.2.0b1
 
 
       - uses: actions/upload-artifact@v2
