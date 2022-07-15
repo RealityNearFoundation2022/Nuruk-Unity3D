@@ -52,7 +52,7 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           targetPlatform: StandaloneLinux64
-          customParameters: -standaloneBuildSubtarget Server
+          customParameters: -batchmode -standaloneBuildSubtarget Server
           unityVersion: 2021.3.3f1
 
 
