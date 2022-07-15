@@ -52,7 +52,8 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           targetPlatform: StandaloneLinux64
-          customParameters: -Development -EnableHeadlessMode -standaloneBuildSubtarget Server -IncludeTestAssemblies 
+          customParameters: -Development -EnableHeadlessMode -standaloneBuildSubtarget Server -IncludeTestAssemblies
+          unityVersion: 2021.3.3f1 
 
 
       - uses: actions/upload-artifact@v2
