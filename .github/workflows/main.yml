@@ -11,8 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          lfs: true
          # Cache
       - uses: actions/cache@v2
         with:
@@ -54,7 +52,8 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           targetPlatform: StandaloneLinux64
-          customParameters: -Development
+          customParameters: -Development -EnableHeadlessMode -standaloneBuildSubtarget Server -IncludeTestAssemblies 
+
 
       - uses: actions/upload-artifact@v2
         with:
