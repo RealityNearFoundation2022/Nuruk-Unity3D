@@ -52,8 +52,8 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           targetPlatform: StandaloneLinux64
-          customParameters: -standaloneBuildSubtarget Server
-          unityVersion: 2021.2.0b1
+          customParameters: " -batchmode -nographics -standaloneBuildSubtarget Server" 
+          unityVersion: 2021.3.3f1
 
 
       - uses: actions/upload-artifact@v2
